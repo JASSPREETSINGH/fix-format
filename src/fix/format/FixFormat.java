@@ -27,6 +27,13 @@ public class FixFormat {
             while (scfile.hasNext()) {  //Is there more words ?
                 String currentWord = scfile.next();     //If yes add the word inside variable
 
+                //If number go to new line
+                try {
+                    Integer.parseInt(currentWord);
+                    System.out.println(""); //Does not crash, go next line
+                    continue;   //Skip rest, go to next part of While loop
+                } catch (Exception e) {
+                }
 
                 //Print Word
                 if (capitilize) {
